@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+<title>Login</title>
+<link href="./css/style.css" 
+      rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+<div align="right">
+		<h:form>
+			<h:commandButton class="btn btn-primary" value="Log Out"
+				action="#{event.logOut}"></h:commandButton>
+		</h:form>
+	</div>
+
+<h1 class="title" align="center">Login</h1>
+
+
+<h1><legend align="center">Hello Admin</legend></h1>
+<h:form align="center">
+if()
+<h5><h:outputLabel value="#{event.username}"></h:outputLabel> has sent approval request</h5>
+<h:commandButton class="btn btn-primary" value="Approve"
+				action="#{event.adminApp}"></h:commandButton>
+<h:commandButton class="btn btn-primary" value="Decline"
+				action="#{event.logOut}"></h:commandButton>
+</h:form>
+
+
+</h:body></html>

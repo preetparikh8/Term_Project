@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<title>Registration</title>
+<link href="./css/style.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+<h1 class="title">Registration</h1>
+<div class="main" align="center">
+<h:form align="center">
+  <h2>Please Enter your Details</h2><br/><br/>
+  <h:form align="center">	
+		<tr>
+					<td><h:outputText value="First Name:" /></td>
+					<td><h:inputText value="#{event.firstname}" id="firstname" required="true" requiredMessage="First Name Required" /></td>
+					<td><h:message for="firstname" style="color:red" /></td>
+				</tr><br/><br/>
+				
+				<tr>
+					<td><h:outputText value="Last Name:" /></td>
+					<td><h:inputText value="#{event.lastname}" id="lastname" 
+							required="true" requiredMessage="Last Name Required" /></td>
+					<td><h:message for="lastname" style="color:red" /></td>
+				</tr><br/><br/>
+				
+				
+				<tr>
+					<td><h:outputText value="Address:" /></td>
+					<td><h:inputText value="#{event.address}" id="address" required="true" requiredMessage="Address Required" /></td>
+				<td><h:message for="address" style="color:red" /></td>
+				</tr><br/><br/>
+				<tr>
+					<td><h:outputText value="Mobile Number:" /></td>
+					<td><h:inputText value="#{event.number}" id="number" 
+							required="true" requiredMessage="Number required" /></td>
+					<td><h:message for="number" style="color:red" /></td>
+				</tr><br/><br/>
+				<tr>
+					<td><h:outputText value="Email ID:" /></td>
+					<td><h:inputText value="#{event.email}" id="email" 
+							required="true" requiredMessage="Email id required" /></td>
+					<td><h:message for="email" style="color:red" /></td>
+				</tr><br/><br/>
+				<tr>
+					<td><h:outputText value="Username:" /></td>
+					<td><h:inputText value="#{event.username}" id="username" 
+							required="true" requiredMessage="Username required" /></td>
+					<td><h:message for="username" style="color:red" /></td>
+				</tr><br/><br/>
+				<tr>
+					<td><h:outputText value="Password :" /></td>
+					<td><h:inputSecret value="#{event.password}" id="password"
+							required="true" requiredMessage="Password required" /></td>
+					<td><h:message for="password" style="color:red" /></td>
+				</tr><br/><br/>
+				<tr>
+					<td><h:outputText value="Role :" /></td>
+					<td> <h:selectOneMenu id="role" value="#{event.role}">
+                            <f:selectItem itemValue="manager" itemLabel="Manager"  />
+                            <f:selectItem itemValue="user" itemLabel="user"  />
+                        </h:selectOneMenu></td>
+					<td><h:message for="password" style="color:red" /></td>
+				</tr><br/><br/>
+				
+				
+		<h:commandButton class="button" value="Register" 
+			action="#{event.goReg()}"></h:commandButton><br/><br/>
+		
+			<a href="Login.xhtml" color="red">Already a member??</a>
+</h:form>
+ 
+</h:form>
+</div>
+</h:body></html>

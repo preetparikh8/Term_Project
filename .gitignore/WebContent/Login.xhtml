@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<title>Login</title>
+<link href="./css/style.css" 
+      rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+<h1 class="title" align="center">Login</h1>
+
+<div class="main" align="center">
+<legend align="center">Welcome</legend>
+<h:form align="center">	
+		<h:outputLabel value="username" />
+		<h:inputText value="#{event.username}" />
+		<br/><br/>
+		<h:outputLabel value="password" />
+		<h:inputSecret value="#{event.password}"></h:inputSecret><br/><br/>
+		
+		
+		<tr>
+					<td><h:outputText value="Role :" /></td>
+					<td> <h:selectOneMenu id="role" value="#{event.role}">
+                            <f:selectItem itemValue="manager" itemLabel="Manager"  />
+                            <f:selectItem itemValue="user" itemLabel="user"  />
+                        </h:selectOneMenu></td>
+					<td><h:message for="password" style="color:red" /></td>
+				</tr><br/><br/>
+			<h:commandButton class="button" value="Login" 
+			action="#{event.goPage()}"></h:commandButton><br/>
+			
+			<a href="Registration.xhtml">New?? Register</a>
+</h:form>
+</div>
+
+
+</h:body></html>

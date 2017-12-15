@@ -1,0 +1,29 @@
+
+
+html { width: 100%; height:100%; overflow:hidden; }
+
+h1 {
+    color: #ff8000;
+}
+
+h2 {
+	color: #ff8000;
+}
+
+body { 
+	width: 100%;
+	height:100%;
+	font-color: #ff8000;
+	font-family: 'Open Sans', sans-serif;
+	background-image: url("518164-backgrounds.jpg");
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+}
+.login { 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width:300px;
+	height:300px;
+}
+

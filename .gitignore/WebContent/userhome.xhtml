@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Stock</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"></link>
+
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="css/style.css" ></link>
+
+    </h:head>
+    <h:body>
+        <div class="container">
+            <h:form>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" style="width:100%;text-align:right">
+                        
+                           
+                                <p>Welcome</p>
+                        
+                        
+                    </div>
+                </div>
+            </h:form>
+
+            <div class="well">
+                <legend>Search Data</legend>
+
+                <div class="row">
+
+                    <h:form>
+                        <label for="sel1">Stock: </label>
+                        <h:selectOneMenu id="symbol" value="#{stockApiBean.selectedSymbol}">
+                            <f:selectItems value="#{stockApiBean.availableSymbols}" />
+                        </h:selectOneMenu>
+
+                        <label for="sel1">Interval: </label>
+                        <h:selectOneMenu id="interval" value="#{stockApiBean.selectedInterval}">
+                            <f:selectItems value="#{stockApiBean.availableIntervals}" />
+                        </h:selectOneMenu>
+                        <br />
+                         <h:commandButton class="btn btn-primary" value="Search"
+				action="#{stockApiBean.timeseries}"></h:commandButton>
+                    </h:form>
+                  
+                </div>
+
+                <h:panelGroup rendered="#{not empty stockApiBean.table1Markup}">
+                    <h:outputText value="#{stockApiBean.table1Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not empty stockApiBean.table2Markup}">
+                    <h:outputText value="#{stockApiBean.table2Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+            </div>
+        </div>
+    </h:body>
+</html>
